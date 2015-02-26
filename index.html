@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="app.css">
+  <title>Testing Widgets</title>
+</head>
+
+<body ng-app="angular-ui-validator">
+  <script src="angular.js"></script>
+  <script src="angular-messages.js"></script>
+  <script src="widgets.js"></script>
+  <div ng-controller="WidgetController">
+    <form name="myForm" ng-submit="submitForm()">
+
+      <div ng-model="x" ui-required></div>
+
+      <label for="">Directive Required</label>
+      <input type="text" name="email" ng-model="email" ui-required>
+      <div ng-messages="myForm.email.$error" class="error">
+        <div ng-message="uirequired">You did not enter a field</div>
+      </div>
+      <br/>
+
+      <label for="">Directive Pattern </label>
+      <input type="text" name="pattern" ng-model="pattern" ui-required ui-pattern="/a/">
+      <div ng-messages="myForm.pattern.$error" class="error">
+        <div ng-message="uirequired">You did not enter a field</div>
+        <div ng-message="uipattern">You did not enter a valid field</div>
+      </div>
+      <br/>
+
+      <input type="submit" value="submit" ng-disabled="!myForm.$valid">
+    </form>
+  </div>
+</body>
+
+</html>
