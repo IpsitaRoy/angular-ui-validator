@@ -3,15 +3,23 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="app.css">
+  <style type="text/css">
+  input.ng-dirty.ng-invalid {
+    border: 1px solid red;
+  }
+  .error {
+    color: #f00;
+  }
+  </style>
   <title>Testing Widgets</title>
-</head>
-
-<body ng-app="angular-ui-validator">
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-messages/angular-messages.min.js"></script>
   <script src="lib/app.js"></script>
-  <div ng-controller="WidgetController">
+  <script src="test.js"></script>
+</head>
+
+<body ng-app="test">
+  <div ng-controller="ctrl">
     <form name="myForm" ng-submit="submitForm()">
       <label for="">Directive Required</label>
       <input type="text" name="email" ng-model="email" ui-required>
@@ -21,7 +29,7 @@
       <br/>
 
       <label for="">Directive Pattern </label>
-      <input type="text" name="pattern" ng-model="pattern" ui-required ui-pattern="/a/">
+      <input type="text" name="pattern" ng-model="name" ui-required ui-pattern="pattern">
       <div ng-messages="myForm.pattern.$error" class="error">
         <div ng-message="uirequired">You did not enter a field</div>
         <div ng-message="uipattern">You did not enter a valid field</div>
