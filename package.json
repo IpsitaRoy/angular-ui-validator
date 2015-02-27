@@ -21,7 +21,5 @@
     "url": "https://github.com/kundu/angular-ui-validator/issues"
   },
   "homepage": "https://github.com/kundu/angular-ui-validator",
-  "dependencies": {
-    "angular": "^1.3.14"
-  }
+  "dependencies": {}
 }
