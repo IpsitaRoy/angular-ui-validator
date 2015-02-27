@@ -1,0 +1,27 @@
+{
+  "name": "angular-ui-validator",
+  "main": "lib/app.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kundu/angular-ui-validator",
+  "authors": [
+    "Abhisek Kundu <abhisek.kundu@innofied.com>"
+  ],
+  "description": "Validate Your Model without html Element",
+  "keywords": [
+    "angular",
+    "form-validation",
+    "model-validation"
+  ],
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.14"
+  }
+}

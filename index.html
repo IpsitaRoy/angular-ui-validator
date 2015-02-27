@@ -8,14 +8,11 @@
 </head>
 
 <body ng-app="angular-ui-validator">
-  <script src="angular.js"></script>
-  <script src="angular-messages.js"></script>
-  <script src="widgets.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+  <script src="lib/app.js"></script>
   <div ng-controller="WidgetController">
     <form name="myForm" ng-submit="submitForm()">
-
-      <div ng-model="x" ui-required></div>
-
       <label for="">Directive Required</label>
       <input type="text" name="email" ng-model="email" ui-required>
       <div ng-messages="myForm.email.$error" class="error">
