@@ -14,6 +14,7 @@
   <title>Testing Widgets</title>
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+  <script src="lib/util.js"></script>
   <script src="lib/app.js"></script>
   <script src="test.js"></script>
 </head>
@@ -22,17 +23,57 @@
   <div ng-controller="ctrl">
     <form name="myForm" ng-submit="submitForm()">
       <label for="">Directive Required</label>
-      <input type="text" name="email" ng-model="email" ui-required>
-      <div ng-messages="myForm.email.$error" class="error">
-        <div ng-message="uirequired">You did not enter a field</div>
+      <input type="text" name="name" ng-model="required" ui-required>{{required}}
+      <div ng-messages="myForm.name.$error" class="error">
+        <div ng-message="uirequired">Please enter name</div>
       </div>
       <br/>
 
       <label for="">Directive Pattern </label>
-      <input type="text" name="pattern" ng-model="name" ui-required ui-pattern="pattern">
-      <div ng-messages="myForm.pattern.$error" class="error">
-        <div ng-message="uirequired">You did not enter a field</div>
-        <div ng-message="uipattern">You did not enter a valid field</div>
+      <input type="text" name="test" ng-model="test" ui-required ui-pattern="pattern">{{test}}
+      <div ng-messages="myForm.test.$error" class="error">
+        <div ng-message="uirequired">Please enter pattern</div>
+        <div ng-message="uipattern">You did not enter a valid pattern</div>
+      </div>
+      <br/>
+
+      <label for="">Directive Email </label>
+      <input type="text" name="email" ng-model="email" ui-required ui-email>{{email}}
+      <div ng-messages="myForm.email.$error" class="error">
+        <div ng-message="uirequired">You did not enter a email</div>
+        <div ng-message="uiemail">You did not enter a valid email</div>
+      </div>
+      <br/>
+
+      <label for="">Directive Url </label>
+      <input type="text" name="url" ng-model="url" ui-required ui-url>{{url}}
+      <div ng-messages="myForm.url.$error" class="error">
+        <div ng-message="uirequired">You did not enter a url</div>
+        <div ng-message="uiurl">You did not enter a valid url</div>
+      </div>
+      <br/>
+
+      <label for="">Directive Min Length </label>
+      <input type="text" name="min" ng-model="min" ui-required ui-minlength="minLength">{{min}}
+      <div ng-messages="myForm.min.$error" class="error">
+        <div ng-message="uirequired">You did not enter min</div>
+        <div ng-message="uiminlength">Please enter atleast 2 letters</div>
+      </div>
+      <br/>
+
+      <label for="">Directive Max Length </label>
+      <input type="text" name="max" ng-model="max" ui-required ui-maxlength="maxLength">{{max}}
+      <div ng-messages="myForm.max.$error" class="error">
+        <div ng-message="uirequired">You did not enter a url</div>
+        <div ng-message="uimaxlength">You can enter max 3 characters</div>
+      </div>
+      <br/>
+
+      <label for="">Directive Length </label>
+      <input type="text" name="urtest1" ng-model="urtest1" ui-required ui-length="length">{{urtest1}}
+      <div ng-messages="myForm.urtest1.$error" class="error">
+        <div ng-message="uirequired">You did not enter a urtest1</div>
+        <div ng-message="uilength">urtest1 must be within 2 to 3 letters</div>
       </div>
       <br/>
 
