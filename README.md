@@ -1,2 +1,2 @@
 # angular-ui-validator
-Validate Your Model without html Element
+Validate Your Model with/without html Element
