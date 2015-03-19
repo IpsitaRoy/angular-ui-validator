@@ -7,6 +7,7 @@
   input.ng-dirty.ng-invalid {
     border: 1px solid red;
   }
+  
   .error {
     color: #f00;
   }
@@ -76,21 +77,16 @@
         <div ng-message="uilength">urtest1 must be within 2 to 3 letters</div>
       </div>
       <br/> -->
-
       <label for="">Password </label>
       <input type="text" name="password" ng-model="password" ui-required>{{password}}
-
       <div ng-messages="myForm.password.$error" class="error">
         <div ng-show="myForm.password.$dirty">
           <div ng-message="uirequired">You did not enter password</div>
         </div>
       </div>
-
       <br/>
-
       <label for="">Directive Equalto </label>
       <input type="text" name="confirm" ng-model="confirm" ui-required ui-equalto="password">{{confirm}}
-
       <div ng-messages="myForm.confirm.$error" class="error">
         <div ng-show="myForm.confirm.$dirty">
           <div ng-message="uirequired">This field is required</div>
@@ -98,9 +94,8 @@
         </div>
       </div>
       <br/>
-
       <input type="submit" value="submit" ng-disabled="!myForm.$valid">
-      <input type="reset" value="cancel" ui-reset>
+      <input type="reset" value="cancel" ui-reset> {{myForm}}
     </form>
   </div>
 </body>
